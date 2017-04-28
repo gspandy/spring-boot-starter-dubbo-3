@@ -1,12 +1,6 @@
 server:
   port: 7001
-  tomcat:
-    max-threads: 10
 spring:
-  http:
-    encoding:
-      charset: UTF-8
-      enabled: true
 #  dubbo:
 #    appname: wechat-provider-user-spring
 #    protocol: dubbo
