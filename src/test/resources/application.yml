@@ -1,0 +1,30 @@
+server:
+  port: 7001
+  tomcat:
+    max-threads: 10
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+#  dubbo:
+#    appname: wechat-provider-user-spring
+#    protocol: dubbo
+#    # multicast 广播中心
+#    registry: multicast://224.0.0.0:1111
+#    # zookeeper 注册中心
+#    # registry: zookeeper://127.0.0.1:2181
+#    port: 20801
+#    group: test
+#    version: 1.0.0
+  dubbo:
+    application:
+      name: wechat-provider-user-spring
+    protocol:
+      name: dubbo
+      port: 20801
+    registry:
+      check: false
+      address: multicast://224.0.0.0:1111
+#      address: zookeeper://127.0.0.1:2181
+      
