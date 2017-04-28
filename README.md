@@ -7,8 +7,6 @@ Spring Boot with dubbo support. dubbo是一个RPC框架。
 
 支持jdk版本为1.6或者1.6+
 
-（在修改源码前，请导入googlestyle-java.xml以保证一致的代码格式）
-
 ### 如何发布dubbo服务
 
 * 添加依赖:
@@ -24,9 +22,16 @@ Spring Boot with dubbo support. dubbo是一个RPC框架。
 * 在application.properties添加dubbo的相关配置信息,样例配置如下:
 
 ```properties
-spring.dubbo.appname=spring-boot-starter-dubbo-provider-test
-spring.dubbo.registry=multicast://224.0.0.0:1111
-spring.dubbo.protocol=dubbo
+spring:
+  dubbo:
+    application:
+      name: provider-xxxxx
+    protocol:
+      name: dubbo
+      port: 20801
+    registry:
+      address: multicast://224.0.0.0:1111
+#      address: zookeeper://127.0.0.1:2181
 ```
 
 * 接下来在Spring Boot Application的上添加`@EnableDubboConfiguration`, 表示要开启dubbo功能. (dubbo provider服务可以使用或者不使用web容器)
@@ -66,9 +71,16 @@ public class HelloServiceImpl implements IHelloService {
 * 在application.properties添加dubbo的相关配置信息,样例配置如下:
 
 ```properties
-spring.dubbo.appname=spring-boot-starter-dubbo-consumer-test
-spring.dubbo.registry=multicast://224.0.0.0:1111
-spring.dubbo.protocol=dubbo
+spring:
+  dubbo:
+    application:
+      name: consumer-xxxxx
+    protocol:
+      name: dubbo
+      port: 20801
+    registry:
+      address: multicast://224.0.0.0:1111
+#      address: zookeeper://127.0.0.1:2181
 ```
 
 * 开启`@EnableDubboConfiguration`
@@ -81,12 +93,12 @@ public class DubboConsumerLauncher {
 }
 ```
 
-* 通过`@DubboConsumer`注入需要使用的interface.
+* 通过`@Reference`注入需要使用的interface.
 
 ```java
 @Component
 public class HelloConsumer {
-  @DubboConsumer
+  @Reference
   private IHelloService iHelloService;
 }
 ```
