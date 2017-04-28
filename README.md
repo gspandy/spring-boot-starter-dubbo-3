@@ -1,8 +1,6 @@
 spring-boot-starter-dubbo
 ===================================
 
-[English](https://github.com/alibaba/spring-boot-starter-dubbo/blob/master/README.md)
-
 Spring Boot with dubbo support. dubbo是一个RPC框架。 
 
 支持jdk版本为1.6或者1.6+
@@ -19,7 +17,7 @@ Spring Boot with dubbo support. dubbo是一个RPC框架。
     </dependency>
 ```
 
-* 在application.properties添加dubbo的相关配置信息,样例配置如下:
+* 在application.yml添加dubbo的相关配置信息,样例配置如下:
 
 ```properties
 spring:
@@ -68,7 +66,7 @@ public class HelloServiceImpl implements IHelloService {
     </dependency>
 ```
 
-* 在application.properties添加dubbo的相关配置信息,样例配置如下:
+* 在application.yml添加dubbo的相关配置信息,样例配置如下:
 
 ```properties
 spring:
