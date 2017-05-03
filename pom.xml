@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>${project.artifactId}</name>
-	<url>https://github.com/xionghuiCoder/spring-boot-starter-dubbo</url>
+	<url>https://github.com/foreveryang321/spring-boot-starter-dubbo</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
